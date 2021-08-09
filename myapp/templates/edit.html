@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if msg %}
+        {{msg}}
+    {% endif %}
+    <form action="{% url 'edit_user' pk=exit_user.id %}" method="POST" class="post-form">{% csrf_token %}<br>
+        {% if exit_user %}
+            <input type="text" name="en" value="{{exit_user.ename}}" id="" placeholder="Enter name"><br>
+            <input type="email" name="em" value="{{exit_user.eemail}}" id="" placeholder="enter email"><br>
+            <input type="text" name="mobo" id="" value="{{exit_user.ename}}" placeholder="enter mobile"><br>
+            <input type="eid" name="eid" value="{{exit_user.ename}}" placeholder="Enter id"><br>
+            <input type="submit" class="btn-btn primary" >
+        {% endif %}
+    </form>
+</body>
+</html>
